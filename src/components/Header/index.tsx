@@ -1,9 +1,29 @@
-import { Teste } from "./style";
+import { HeaderContainer, Title } from "./style";
 
-export const Header = () => {
+// import Switch from "react-switch";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+
+import Logo from "../../assets/rocket.svg";
+
+interface HeaderProps {
+  changeTheme: () => void;
+}
+
+export const Header = ({ changeTheme }: HeaderProps) => {
+  const theme = useContext(ThemeContext);
+
   return (
-    <Teste>
-      <p>testing</p>
-    </Teste>
+    <>
+      <HeaderContainer>
+        <img src={Logo} alt="" />
+        <Title>
+          <span>task</span>
+          <span>control</span>
+        </Title>
+
+        <button onClick={() => changeTheme()}>Trocar tema</button>
+      </HeaderContainer>
+    </>
   );
 };
