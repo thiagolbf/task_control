@@ -8,6 +8,7 @@ import { lightTheme } from "./styles/themes/light";
 
 import { Header } from "./components/Header";
 import { AddNewTask } from "./components/NewTask";
+import { TaskContent } from "./components/TaskContainer";
 
 function App() {
   const [change, setChange] = useState(true);
@@ -16,14 +17,15 @@ function App() {
     setChange(!change);
   };
 
-  console.log(change);
   return (
     <>
       <ThemeProvider theme={change ? darkTheme : lightTheme}>
         <Header changeTheme={changeTheme} />
         <AddNewTask />
+        <TaskContent />
+        <GlobalStyle />
       </ThemeProvider>
-      <GlobalStyle />
+      
     </>
   );
 }
