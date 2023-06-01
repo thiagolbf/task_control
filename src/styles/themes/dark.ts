@@ -5,7 +5,7 @@ export const darkTheme = {
   headerBackground: "#0D0D0D",
   bodyBackground: "#1A1A1A",
 
-  taskBackground: "#262626",
+  taskBackground: "#333333",
 
   buttonText: "#F2F2F2",
 

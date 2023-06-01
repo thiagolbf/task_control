@@ -5,7 +5,7 @@ export const lightTheme = {
   headerBackground: "#D9D9D9",
   bodyBackground: "#F2F2F2",
 
-  taskBackground: "#F2F2F2",
+  taskBackground: "#D3D3D3",
 
   buttonText: "#F2F2F2",
 
