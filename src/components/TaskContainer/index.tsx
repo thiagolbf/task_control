@@ -9,6 +9,7 @@ import {
 } from "./style";
 
 import ClipBoard from "../../assets/Clipboard.svg";
+import { Task } from "../Task";
 
 export const TaskContent = () => {
   return (
@@ -34,6 +35,9 @@ export const TaskContent = () => {
           <p>Você ainda não tem tarefas cadastradas</p>
           <p>Crie tarefas e organize seus itens a fazer</p>
         </NoTasks>
+
+        <Task concluded />
+        <Task concluded={false} />
       </DescribedTasks>
     </TaskContainer>
   );
