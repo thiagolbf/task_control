@@ -11,21 +11,28 @@ import { AddNewTask } from "./components/NewTask";
 import { TaskContent } from "./components/TaskContainer";
 
 function App() {
-  const [change, setChange] = useState(true);
+  const storedTheme = localStorage.getItem("@THEME");
+  const initialTheme = typeof storedTheme === "string" ? storedTheme : "light";
+  const [change, setChange] = useState<string>(initialTheme);
 
   const changeTheme = () => {
-    setChange(!change);
+    if (change === "dark") {
+      setChange("light");
+      localStorage.setItem("@THEME", "light");
+    } else {
+      setChange("dark");
+      localStorage.setItem("@THEME", "dark");
+    }
   };
 
   return (
     <>
-      <ThemeProvider theme={change ? darkTheme : lightTheme}>
+      <ThemeProvider theme={change === "dark" ? darkTheme : lightTheme}>
         <Header changeTheme={changeTheme} />
         <AddNewTask />
         <TaskContent />
         <GlobalStyle />
       </ThemeProvider>
-      
     </>
   );
 }
