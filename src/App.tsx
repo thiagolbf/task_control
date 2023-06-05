@@ -10,6 +10,8 @@ import { Header } from "./components/Header";
 import { AddNewTask } from "./components/NewTask";
 import { TaskContent } from "./components/TaskContainer";
 
+import { TaskProvider } from "./context/TaskContext";
+
 function App() {
   const storedTheme = localStorage.getItem("@THEME");
   const initialTheme = typeof storedTheme === "string" ? storedTheme : "light";
@@ -29,8 +31,10 @@ function App() {
     <>
       <ThemeProvider theme={change === "dark" ? darkTheme : lightTheme}>
         <Header changeTheme={changeTheme} />
-        <AddNewTask />
-        <TaskContent />
+        <TaskProvider>
+          <AddNewTask />
+          <TaskContent />
+        </TaskProvider>
         <GlobalStyle />
       </ThemeProvider>
     </>

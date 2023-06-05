@@ -1,23 +1,36 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 1.5rem;
+  border-radius: 8px;
+
+  background-color: ${(props) => props.theme.taskBackground};
   & + & {
     margin-top: 0.75rem;
   }
 
+  > p {
+    font-size: 0.6rem;
+    text-align: right;
+    margin: -10px 2px 5px 0;
+
+    color: ${(props) => props.theme.secundaryFont};
+  }
+`;
+
+export const TaskContent = styled.div`
   background-color: ${(props) => props.theme.taskBackground};
 
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 8px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
   gap: 0.75rem;
-
-  > button:first-child {
-  }
 `;
 
 export const MarkTask = styled.button`
