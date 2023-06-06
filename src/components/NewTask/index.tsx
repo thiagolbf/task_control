@@ -14,6 +14,8 @@ export const AddNewTask = () => {
     setTaskContent(event.target.value);
   };
 
+  const newTaskEmpety = taskContent.length === 0;
+
   const handleAddNewTask = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -41,8 +43,11 @@ export const AddNewTask = () => {
           placeholder="Adicione uma nova tarefa"
           onChange={handleNewContent}
           value={taskContent}
+          required
+          minLength={5}
+          maxLength={100}
         />
-        <button type="submit">
+        <button type="submit" disabled={newTaskEmpety}>
           Criar <PlusCircle size={20} />
         </button>
       </form>
