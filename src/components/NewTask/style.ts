@@ -55,6 +55,11 @@ export const NewTaskContainer = styled.div`
         background-color: ${(props) => props.theme.blue};
         transition: background-color 0.2s;
       }
+
+      :disabled {
+        cursor: not-allowed;
+        background-color: ${(props) => props.theme.secundaryFont};
+      }
     }
   }
 `;

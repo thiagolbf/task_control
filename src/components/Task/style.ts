@@ -80,7 +80,7 @@ export const UnMarkTask = styled.button`
 export const Content = styled.p`
   flex: 1;
   color: ${(props) => props.theme.primaryFont};
-
+  word-break: break-all;
   font-size: 0.85rem;
 `;
 
@@ -89,7 +89,7 @@ export const ConcludedContent = styled.p`
   color: ${(props) => props.theme.secundaryFont};
 
   font-size: 0.85rem;
-
+  word-break: break-all;
   text-decoration: line-through;
 `;
 
