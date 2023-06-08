@@ -54,7 +54,7 @@ export const TaskContent = () => {
           </>
         ) : (
           <>
-            {tasks.map((value, index) => {
+            {tasks.map((value) => {
               return (
                 <Task
                   key={value.id}

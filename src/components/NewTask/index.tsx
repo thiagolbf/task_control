@@ -44,7 +44,7 @@ export const AddNewTask = () => {
           onChange={handleNewContent}
           value={taskContent}
           required
-          minLength={5}
+          minLength={3}
           maxLength={100}
         />
         <button type="submit" disabled={newTaskEmpety}>

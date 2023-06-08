@@ -24,7 +24,10 @@ export const TaskContext = createContext<TaskContextType>(
 );
 
 export const TaskProvider = ({ children }: TaskProviderProps) => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const storedTasks = localStorage.getItem("@TASKS");
+  const initialTasks = typeof storedTasks === "string" ? storedTasks : "[]";
+
+  const [tasks, setTasks] = useState<Task[]>(JSON.parse(initialTasks));
 
   const sortTask = (task: Task[]) => {
     task.sort((taskA, taskB) => {
@@ -57,6 +60,8 @@ export const TaskProvider = ({ children }: TaskProviderProps) => {
       const tasks = [...state, task];
 
       sortTask(tasks);
+
+      localStorage.setItem("@TASKS", JSON.stringify(tasks));
 
       return tasks;
     });
@@ -102,7 +107,11 @@ export const TaskProvider = ({ children }: TaskProviderProps) => {
   const concludedTask = (task: Task) => {
     const filteredTask = tasks.find((value) => value.id === task.id);
 
+    console.log(filteredTask);
+
     const updateTask = tasks.filter((value) => value.id !== filteredTask?.id);
+
+    localStorage.setItem("@TASKS", JSON.stringify(updateTask));
 
     setTasks(updateTask);
   };
