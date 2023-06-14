@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={change === "dark" ? darkTheme : lightTheme}>
-        <Header changeTheme={changeTheme} />
+        <Header changeTheme={changeTheme} actualTheme={change} />
         <TaskProvider>
           <AddNewTask />
           <TaskContent />

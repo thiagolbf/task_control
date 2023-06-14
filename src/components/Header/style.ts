@@ -10,11 +10,17 @@ export const HeaderContainer = styled.header`
 
   padding: 3.8rem 0 5.6rem 0;
 
-  > button {
+  /* > button {
     position: absolute;
     right: 1rem;
     top: 1rem;
-  }
+  } */
+`;
+
+export const ToggleTheme = styled.div`
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 `;
 
 export const Title = styled.div`
