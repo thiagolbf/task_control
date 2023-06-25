@@ -1,6 +1,6 @@
 # Task Control
 
-#### Projeto (Front-End) para controle de tarefas.
+#### Projeto (Front-End) para controle de tarefas (salvando dados no localStorage) e com tema Light/Dark.
 
 ### Tecnologias utilizadas;
 
